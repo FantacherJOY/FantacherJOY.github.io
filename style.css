@@ -291,7 +291,7 @@ section:last-of-type { border-bottom: none; }
 .chip {
   font-family: var(--font-mono);
   font-size: .72rem;
-  text-transform: uppercase;
+  text-transform: none; /* Changed from uppercase to none */
   letter-spacing: .08em;
   padding: .35rem .75rem;
   border: 1px solid var(--rule);
