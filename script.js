@@ -1,7 +1,4 @@
-// Minimal JS: mobile nav toggle + active link highlighting
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const nav    = document.querySelector('.site-nav');
   if (toggle && nav) {
@@ -12,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Highlight active nav link based on current page
   const path = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.site-nav a').forEach(link => {
     const href = link.getAttribute('href');

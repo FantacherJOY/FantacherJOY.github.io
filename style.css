@@ -1,24 +1,16 @@
-/* =========================================================
-   Md Fantacher Islam — Portfolio
-   Editorial academic aesthetic, azure palette
-   ========================================================= */
-
 :root {
-  /* Color system */
-  --bg:          #F0FFFF;      /* very light blue (azure) */
-  --surface:     #FAFFFF;      /* card surface */
-  --ink:         #161A1C;      /* near-black body text */
-  --ink-muted:   #515E60;      /* secondary text */
-  --rule:        #C3DBDB;      /* cool hairline divider */
-  --rule-soft:   #DDEDED;      /* softer divider */
-  --accent:      #0F5257;      /* deep teal */
+  --bg:          #F0FFFF;
+  --surface:     #FAFFFF;
+  --ink:         #161A1C;
+  --ink-muted:   #515E60;
+  --rule:        #C3DBDB;
+  --rule-soft:   #DDEDED;
+  --accent:      #0F5257;
   --accent-hover:#166B72;
 
-  /* Typography */
   --font-serif:  'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-mono:   'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Spacing scale */
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -27,17 +19,15 @@
   --space-6: 4.5rem;
   --space-7: 6rem;
 
-  /* Layout */
   --max-width: 1100px;
   --reading-width: 62ch;
 }
 
-/* ---------- Reset ---------- */
 *,*::before,*::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 0 var(--space-6);
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-serif);
@@ -60,7 +50,6 @@ a {
 }
 a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
-/* ---------- Parchment texture (subtle) ---------- */
 body::before {
   content: "";
   position: fixed;
@@ -72,7 +61,6 @@ body::before {
   z-index: 0;
 }
 
-/* ---------- Layout ---------- */
 .container {
   position: relative;
   z-index: 1;
@@ -81,7 +69,6 @@ body::before {
   padding: 0 var(--space-3);
 }
 
-/* ---------- Header / Navigation ---------- */
 .site-header {
   position: relative;
   z-index: 10;
@@ -131,7 +118,6 @@ body::before {
   border-bottom-color: var(--accent);
 }
 
-/* Mobile nav toggle */
 .nav-toggle {
   display: none;
   background: none;
@@ -146,7 +132,6 @@ body::before {
   border-radius: 2px;
 }
 
-/* ---------- Hero ---------- */
 .hero {
   padding: var(--space-6) 0 var(--space-5);
   border-bottom: 1px solid var(--rule);
@@ -203,7 +188,6 @@ body::before {
   font-variation-settings: "opsz" 144;
 }
 
-/* ---------- Page title (for internal pages) ---------- */
 .page-title {
   padding: var(--space-6) 0 var(--space-4);
   border-bottom: 1px solid var(--rule);
@@ -236,7 +220,6 @@ body::before {
   font-size: 1.05rem;
 }
 
-/* ---------- Sections ---------- */
 section {
   padding: var(--space-5) 0;
   border-bottom: 1px solid var(--rule-soft);
@@ -271,7 +254,6 @@ section:last-of-type { border-bottom: none; }
   color: var(--accent);
 }
 
-/* ---------- Prose ---------- */
 .prose {
   max-width: var(--reading-width);
   margin-left: 120px;
@@ -280,7 +262,6 @@ section:last-of-type { border-bottom: none; }
 .prose p + p { margin-top: var(--space-2); }
 .prose strong { font-weight: 500; }
 
-/* ---------- Research interests (chips) ---------- */
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -291,7 +272,7 @@ section:last-of-type { border-bottom: none; }
 .chip {
   font-family: var(--font-mono);
   font-size: .72rem;
-  text-transform: none; /* Changed from uppercase to none */
+  text-transform: none;
   letter-spacing: .08em;
   padding: .35rem .75rem;
   border: 1px solid var(--rule);
@@ -300,7 +281,6 @@ section:last-of-type { border-bottom: none; }
   border-radius: 999px;
 }
 
-/* ---------- Item list (timeline style) ---------- */
 .items {
   list-style: none;
   padding: 0;
@@ -350,7 +330,6 @@ section:last-of-type { border-bottom: none; }
 }
 .item-body ul li { margin-bottom: .3rem; }
 
-/* ---------- Project cards ---------- */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -402,7 +381,6 @@ section:last-of-type { border-bottom: none; }
   border-top: 1px solid var(--rule-soft);
 }
 
-/* ---------- Publications ---------- */
 .publications {
   list-style: none;
   counter-reset: pub;
@@ -470,7 +448,6 @@ section:last-of-type { border-bottom: none; }
 }
 .publication .links a:hover { border-bottom-color: var(--accent); }
 
-/* ---------- Awards ---------- */
 .awards {
   list-style: none;
   padding: 0;
@@ -507,7 +484,6 @@ section:last-of-type { border-bottom: none; }
   font-size: .95rem;
 }
 
-/* ---------- Contact ---------- */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -538,7 +514,6 @@ section:last-of-type { border-bottom: none; }
 }
 .contact-item a:hover { color: var(--accent); }
 
-/* ---------- Quick links on home ---------- */
 .quick-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -573,7 +548,6 @@ section:last-of-type { border-bottom: none; }
 }
 .quick-nav a:hover::after { transform: translateY(-50%) translateX(3px); }
 
-/* ---------- Pull quote ---------- */
 .pull-quote {
   margin: var(--space-5) 0;
   padding: var(--space-3) 0;
@@ -600,31 +574,6 @@ section:last-of-type { border-bottom: none; }
 }
 .pull-quote cite::before { content: "— "; }
 
-/* ---------- Footer ---------- */
-.site-footer {
-  padding: var(--space-4) 0 var(--space-5);
-  margin-top: var(--space-5);
-  border-top: 1px solid var(--rule);
-  font-family: var(--font-mono);
-  font-size: .78rem;
-  color: var(--ink-muted);
-  letter-spacing: .04em;
-}
-.site-footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-.site-footer a {
-  color: var(--ink-muted);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-}
-.site-footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-/* ---------- Animations ---------- */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -641,7 +590,6 @@ section:last-of-type { border-bottom: none; }
 .page-title h1       { animation-delay: .15s; }
 .page-title p        { animation-delay: .3s;  }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 820px) {
   body { font-size: 17px; }
   .section-head {
@@ -685,9 +633,8 @@ section:last-of-type { border-bottom: none; }
   .hero-lead::first-letter { font-size: 2.6rem; }
 }
 
-/* ---------- Print (for CV export) ---------- */
 @media print {
-  .site-header, .site-footer, .nav-toggle { display: none; }
+  .site-header, .nav-toggle { display: none; }
   body { background: white; color: black; font-size: 11pt; }
   a { color: black; text-decoration: underline; }
   section { page-break-inside: avoid; }
