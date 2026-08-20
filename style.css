@@ -224,7 +224,7 @@ section {
   padding: var(--space-5) 0;
   border-bottom: 1px solid var(--rule-soft);
 }
-section:last-of-type { border-bottom: none; }
+section:last-of-type { border-bottom: 1px solid var(--rule); }
 
 .section-head {
   display: grid;
