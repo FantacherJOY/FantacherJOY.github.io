@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const path = '/' + window.location.pathname.split('/').pop().replace(/\.html$/, '').replace(/^index$/, '');
   document.querySelectorAll('.site-nav a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === path || (path === '' && href === 'index.html')) {
+    if (href === path) {
       link.classList.add('active');
     }
   });

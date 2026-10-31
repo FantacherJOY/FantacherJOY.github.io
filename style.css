@@ -1,12 +1,12 @@
 :root {
-  --bg:          #F0FFFF;
-  --surface:     #FAFFFF;
-  --ink:         #161A1C;
-  --ink-muted:   #515E60;
-  --rule:        #A6CACA;
-  --rule-soft:   #CFE4E4;
-  --accent:      #0F5257;
-  --accent-hover:#166B72;
+  --bg:          #FFFFFF;
+  --surface:     #FFFFFF;
+  --ink:         #111111;
+  --ink-muted:   #555555;
+  --rule:        #BBBBBB;
+  --rule-soft:   #E2E2E2;
+  --accent:      #111111;
+  --accent-hover:#333333;
 
   --font-serif:  'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-mono:   'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -49,17 +49,6 @@ a {
   transition: color .2s ease, text-decoration-color .2s ease;
 }
 a:hover { color: var(--accent); text-decoration-color: var(--accent); }
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(56,116,128,.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(30,70,90,.03) 0%, transparent 50%);
-  z-index: 0;
-}
 
 .container {
   position: relative;
@@ -145,10 +134,6 @@ body::before {
   display: flex;
   gap: var(--space-3);
   margin-bottom: var(--space-3);
-}
-.hero-meta span::before {
-  content: "§ ";
-  color: var(--accent);
 }
 .hero h1 {
   font-family: var(--font-serif);
@@ -348,7 +333,7 @@ section:last-of-type { border-bottom: 1px solid var(--rule); }
 .project:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
-  box-shadow: 0 8px 24px rgba(22,48,56,.10);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
 }
 .project-tag {
   font-family: var(--font-mono);
