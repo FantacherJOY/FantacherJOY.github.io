@@ -75,6 +75,9 @@
                   <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
                     <ul class="md-nav__list">
                       <li class="md-nav__item">
+                        <a href="#current" class="md-nav__link">Current</a>
+                      </li>
+                      <li class="md-nav__item">
                         <a href="#past" class="md-nav__link">Past</a>
                       </li>
                     </ul>
@@ -98,70 +101,62 @@
           <h1 id="projects">Projects</h1>
           <p>Selected research and academic projects.</p>
 
-          <!-- <h2 id="current">Current</h2>
-          <div class="grid cards">
+          <h2 id="current">Current</h2>
+          <div class="grid cards projects">
           <ul>
           <li>
-          <p class="card-tag">Clinical Informatics · NIH</p>
-          <p><strong>Long COVID (NIH RECOVER)</strong></p>
+          <p class="card-tag">Causal Inference · Digital Twin</p>
+          <p><strong>Digital Twin Framework (DINIRS)</strong></p>
           <hr>
-          <p>Applying continuous-time Markov multistate analysis to the NIH RECOVER Adult Cohort to model Long COVID symptom trajectories and identify recovery risk factors, informing targeted treatment strategies for post-acute sequelae of SARS-CoV-2.</p>
-          <p class="card-meta">Jan 2024 – Ongoing · R, Python, NIH RECOVER Cohort</p>
+          <p>Choosing between noninvasive respiratory support (NIRS) and invasive mechanical ventilation (IMV) for patients with acute respiratory failure is a complex, time-sensitive decision with heterogeneous treatment effects across patient subgroups. We developed and validated a censoring-aware Digital Twin framework for Individualized Treatment Effects of Non-Invasive Respiratory Support (DINIRS) to estimate individualized treatment effects (ITEs) that capture mortality and ventilation duration.</p>
+          <p><a href="https://arxiv.org/abs/2608.26915" target="_blank" rel="noopener">arXiv</a></p>
+          <p class="card-meta">Ongoing · MIMIC-IV, eICU-CRD</p>
+          </li>
+          <li>
+          <p class="card-tag">Clinical Informatics · NIH</p>
+          <p><strong>Long COVID Trajectories</strong></p>
+          <hr>
+          <p>Ongoing work with the NIH RECOVER Adult Cohort.</p>
+          <p><a href="https://recovercovid.org/" target="_blank" rel="noopener">NIH RECOVER Initiative</a> · <a href="https://clinicaltrials.gov/study/NCT05172024" target="_blank" rel="noopener">RECOVER Adult Cohort (NCT05172024)</a></p>
+          <p class="card-meta">Ongoing · NIH RECOVER Adult Cohort</p>
           </li>
           </ul>
-          </div> -->
+          </div>
 
           <h2 id="past">Past</h2>
-          <div class="grid cards">
+          <div class="grid cards projects">
           <ul>
           <li>
           <p class="card-tag">Biomedical Ontology</p>
           <p><strong>NIRS Ontology for Acute Care</strong></p>
           <hr>
-          <p>Developed a Non-Invasive Respiratory Support (NIRS) ontology to support knowledge representation and interoperability in acute care settings. Published in <em>PLOS One</em> (2026).</p>
+          <p>In this study, we introduced NIRS ontology to support knowledge representation in acute care settings by providing a unified framework that enhances data clarity and interoperability, laying the groundwork for future clinical decision-making research. The ontology has 145 classes, 11 object properties, and 18 data properties across 949 axioms that establish concept relationships.</p>
+          <p><a href="https://doi.org/10.1371/journal.pone.0348199" target="_blank" rel="noopener">DOI</a> · <a href="https://bioportal.bioontology.org/ontologies/NIRS" target="_blank" rel="noopener">BioPortal</a> · <a href="https://github.com/vsubbian/NIRS-Ontology" target="_blank" rel="noopener">GitHub</a></p>
           <p class="card-meta">Nov 2024 – Jul 2025 · OWL, Protégé, MIMIC-IV</p>
-          </li>
-          <li>
-          <p class="card-tag">Clinical Informatics</p>
-          <p><strong>Fungal Infections in the <em>All of Us</em> Research Program</strong></p>
-          <hr>
-          <p>Analyzed prevalence, distribution, and socioeconomic factors of fungal infections (coccidioidomycosis, aspergillosis, histoplasmosis) using large-scale All of Us data for enhanced disease surveillance. Published as an arXiv preprint (arXiv:2512.21952).</p>
-          <p class="card-meta">Mar – Jul 2025 · Python, SQL, All of Us Research Program</p>
           </li>
           <li>
           <p class="card-tag">Health Informatics</p>
           <p><strong>ICU Liberation Bundle Standardization</strong></p>
           <hr>
-          <p>Developed standardized data elements and bundle cards for the ICU Liberation (A-F) Bundle using MIMIC-IV, targeting a 25–50% reduction in delirium/coma days and fewer ICU readmissions. Published in <em>Applied Clinical Informatics</em> (2026).</p>
+          <p>This study aims to characterize data elements of the A-F liberation bundle using a large, single-center critical care database and to develop standardized bundle cards that map bundle components to controlled vocabularies. We developed and validated six ICU Liberation Bundle cards that map bundle components to standardized vocabularies and CDMs, enabling retrospective adherence evaluation in real-world data.</p>
+          <p><a href="https://doi.org/10.1055/a-2802-7458" target="_blank" rel="noopener">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/41633406/" target="_blank" rel="noopener">PubMed</a></p>
           <p class="card-meta">Jan – Nov 2024 · Python, SQL, MIMIC-IV</p>
           </li>
-          <!-- <li>
-          <p class="card-tag">EHR Workflow</p>
-          <p><strong>Documentation Burden in Surgical Care</strong></p>
+          <li>
+          <p class="card-tag">Clinical Informatics</p>
+          <p><strong>Fungal Infections in the <em>All of Us</em> Research Program</strong></p>
           <hr>
-          <p>Examined EHR audit logs in surgical settings to quantify inefficiencies and after-hours use linked to clinician burnout, proposing workflow optimizations aligned with AMIA's 25×5 campaign. Presented at AMIA Clinical Informatics Conference 2024.</p>
-          <p class="card-meta">Aug – Dec 2023 · Python, EHR Audit Logs</p>
-          </li> -->
+          <p>Fungal infections, such as coccidioidomycosis, aspergillosis, and histoplasmosis, represent a growing public health concern in the United States. We constructed three cohorts, coccidioidomycosis (n = 1,171), aspergillosis (n = 687), and histoplasmosis (n = 347), among 393,601 participants with electronic health record data.</p>
+          <p><a href="https://arxiv.org/abs/2512.21952" target="_blank" rel="noopener">arXiv</a></p>
+          <p class="card-meta">Mar – Jul 2025 · Python, SQL, All of Us Research Program</p>
+          </li>
           <li>
           <p class="card-tag">Energy Systems · MS Thesis</p>
           <p><strong>Distributed Generation with Wind Turbines &amp; Smart Contracts</strong></p>
           <hr>
-          <p>Planned and optimized a distributed generation model using wind turbines, stochastic linear/non-linear programming, and blockchain-based smart contracts for renewable energy management. Presented at IISE Annual Conference 2023.</p>
+          <p>This thesis develops and solves three mathematical optimization models to determine wind turbines' optimal siting and sizing in distributed generation (DG) systems operating in industrial parks or residential house settings that may connect to a substation or operate in an islanded mode. The third model integrates a smart contract mechanism into the second model to also ensure transparent, secure, and efficient energy transactions between the factories (or houses).</p>
+          <p><a href="https://www.proquest.com/openview/00827f3ff25aa185d295d03113351128/1?pq-origsite=gscholar&amp;cbl=51908" target="_blank" rel="noopener">IISE 2023 Proceedings</a></p>
           <p class="card-meta">2022 – 2023 · Python, AMPL, AMPLPY</p>
-          </li>
-          <li>
-          <p class="card-tag">Energy Forecasting</p>
-          <p><strong>LSTM Energy Demand &amp; Price Forecasting</strong></p>
-          <hr>
-          <p>Developed an LSTM-based forecasting model for user-side energy demand and electricity prices, outperforming traditional time-series approaches and improving energy management and pricing strategies.</p>
-          <p class="card-meta">2022 – 2023 · Python, TensorFlow/Keras</p>
-          </li>
-          <li>
-          <p class="card-tag">Computer Vision</p>
-          <p><strong>Metal Surface Defect Inspection via Deep Neural Network</strong></p>
-          <hr>
-          <p>Developed a deep neural network-based inspection system for automated detection of metal surface defects, presented at the International Conference on Mechanical, Industrial and Energy Engineering (2018).</p>
-          <p class="card-meta">2018 · Python, TensorFlow</p>
           </li>
           </ul>
           </div>

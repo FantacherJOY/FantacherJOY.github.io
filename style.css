@@ -11,9 +11,9 @@
   --md-accent-fg-color--transparent: #526cfe1a;
 
   --md-default-bg-color:           #ffffff;
-  --md-default-fg-color:           #000000de;
-  --md-default-fg-color--light:    #0000008a;
-  --md-default-fg-color--lighter:  #00000052;
+  --md-default-fg-color:           #000000;
+  --md-default-fg-color--light:    #000000;
+  --md-default-fg-color--lighter:  #000000;
   --md-default-fg-color--lightest: #00000012;
 
   --md-typeset-a-color:   var(--md-primary-fg-color);
@@ -650,6 +650,10 @@ svg { display: block; }
   font-size: .7rem;
   color: var(--md-default-fg-color--light);
 }
+
+/* Project entries: one per row */
+
+.md-typeset .grid.projects { grid-template-columns: 1fr; grid-gap: .8rem; }
 
 /* Footer */
 
