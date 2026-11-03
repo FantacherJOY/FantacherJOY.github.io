@@ -38,21 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Project graphics: step through bundle components and animate once in view
+  // Project graphics: cycle through bundle cards and maps, and animate once in view
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('.viz-bundle').forEach(viz => {
-    const steps = viz.querySelectorAll('.viz-bundle__steps li');
-    const defs  = viz.querySelectorAll('.viz-bundle__defs p');
+  const cycle = (viz, navSel, slideSel, delay) => {
+    const nav    = viz.querySelectorAll(navSel);
+    const slides = viz.querySelectorAll(slideSel);
     let i = 0;
     const show = n => {
-      steps.forEach((s, k) => s.classList.toggle('is-active', k === n));
-      defs.forEach((d, k) => d.classList.toggle('is-active', k === n));
+      nav.forEach((s, k) => s.classList.toggle('is-active', k === n));
+      slides.forEach((d, k) => d.classList.toggle('is-active', k === n));
     };
-    steps.forEach((s, k) => s.addEventListener('mouseenter', () => { i = k; show(i); }));
-    if (!reduceMotion) setInterval(() => { i = (i + 1) % steps.length; show(i); }, 2500);
-  });
+    nav.forEach((s, k) => {
+      s.addEventListener('mouseenter', () => { i = k; show(i); });
+      s.addEventListener('click', () => { i = k; show(i); });
+    });
+    if (!reduceMotion) setInterval(() => { i = (i + 1) % nav.length; show(i); }, delay);
+  };
+  document.querySelectorAll('.viz-bundle').forEach(viz => cycle(viz, '.viz-bundle__steps li', '.viz-bundle__card', 4000));
+  document.querySelectorAll('.viz-maps').forEach(viz => cycle(viz, '.viz-maps__dots li', 'img', 3500));
 
-  const animated = document.querySelectorAll('.viz-bars, .viz-models');
+  const animated = document.querySelectorAll('.viz-models');
   if (animated.length && 'IntersectionObserver' in window && !reduceMotion) {
     root.classList.add('js-viz');
     const io = new IntersectionObserver(entries => {

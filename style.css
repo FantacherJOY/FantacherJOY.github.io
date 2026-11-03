@@ -675,7 +675,8 @@ svg { display: block; }
   background-color: var(--md-default-bg-color);
   overflow: hidden;
 }
-.md-typeset .viz ol { list-style: none; margin: 0; padding: 0; }
+.md-typeset .viz ol,
+.md-typeset .viz ul { list-style: none; margin: 0; padding: 0; }
 .md-typeset .viz li { margin: 0; }
 .md-typeset .viz-caption { margin: 0; font-size: .7rem; font-style: italic; text-align: center; }
 
@@ -698,39 +699,66 @@ svg { display: block; }
   color: var(--md-primary-bg-color);
   transform: scale(1.15);
 }
-.md-typeset .viz-bundle__defs { position: relative; min-height: 3.6rem; }
-.md-typeset .viz-bundle__defs p {
+.md-typeset .viz-bundle__defs { position: relative; min-height: 7.5rem; }
+.md-typeset .viz-bundle__card {
   position: absolute;
   inset: 0;
-  margin: 0;
-  font-size: .9rem;
-  text-align: center;
   opacity: 0;
   transform: translateY(.4rem);
   transition: opacity .5s, transform .5s;
 }
-.md-typeset .viz-bundle__defs p.is-active { opacity: 1; transform: none; }
-
-.md-typeset .viz-bars__row {
+.md-typeset .viz-bundle__card.is-active { opacity: 1; transform: none; }
+.md-typeset .viz-bundle__def { margin: 0 0 .6rem; font-size: .85rem; font-weight: 700; text-align: center; }
+.md-typeset .viz-bundle__map li {
   display: grid;
-  grid-template-columns: 9rem 1fr 3rem;
-  align-items: center;
+  grid-template-columns: 2fr 2fr 1fr;
   gap: .6rem;
-  font-size: .75rem;
+  padding: .3rem .4rem;
+  border-top: .05rem solid var(--md-default-fg-color--lightest);
+  font-size: .7rem;
 }
-.md-typeset .viz-bars__track {
-  height: 1.4rem;
-  border-radius: .1rem;
-  background-color: var(--md-default-fg-color--lightest);
+.md-typeset .viz-bundle__map li.viz-bundle__head { border-top: 0; font-weight: 700; }
+.md-typeset .viz-bundle__map li span:nth-child(2) { color: var(--md-primary-fg-color); }
+.md-typeset .viz-bundle__map li.viz-bundle__head span { color: inherit; }
+
+.md-typeset .viz-maps { position: relative; overflow: hidden; }
+.md-typeset .viz-maps img {
+  position: absolute;
+  inset: 0 0 1.6rem;
+  width: 100%;
+  height: calc(100% - 1.6rem);
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .8s;
 }
-.md-typeset .viz-bars__fill {
-  display: block;
-  height: 100%;
-  width: var(--w);
-  border-radius: .1rem;
-  background-color: var(--md-primary-fg-color);
+.md-typeset .viz-maps img.is-active { opacity: 1; }
+.md-typeset .viz-maps__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: .4rem;
+  display: flex;
+  justify-content: center;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.md-typeset .viz-bars__value { font-weight: 700; text-align: right; }
+.md-typeset .viz-maps__dots li {
+  margin: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  border: .05rem solid var(--md-primary-fg-color);
+  border-radius: 50%;
+  color: var(--md-primary-fg-color);
+  font-size: .55rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color .4s, color .4s;
+}
+.md-typeset .viz-maps__dots li.is-active { background-color: var(--md-primary-fg-color); color: #ffffff; }
 
 .md-typeset .viz-models__steps { display: flex; align-items: stretch; gap: 1.6rem; }
 .md-typeset .viz-models__steps li {
@@ -757,11 +785,7 @@ svg { display: block; }
   font-size: 1rem;
 }
 
-/* Bars grow and model boxes appear once scrolled into view */
-.js-viz .viz-bars .viz-bars__fill { width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
-.js-viz .viz-bars.is-visible .viz-bars__fill { width: var(--w); }
-.js-viz .viz-bars .viz-bars__row:nth-child(2) .viz-bars__fill { transition-delay: .2s; }
-.js-viz .viz-bars .viz-bars__row:nth-child(3) .viz-bars__fill { transition-delay: .4s; }
+/* Model boxes appear once scrolled into view */
 .js-viz .viz-models .viz-models__steps li { opacity: 0; transform: translateY(.6rem); transition: opacity .6s, transform .6s; }
 .js-viz .viz-models.is-visible .viz-models__steps li { opacity: 1; transform: none; }
 .js-viz .viz-models .viz-models__steps li:nth-child(2) { transition-delay: .5s; }
@@ -769,14 +793,17 @@ svg { display: block; }
 
 @media screen and (max-width: 44.984375em) {
   .md-typeset .viz { height: auto; min-height: 18rem; }
-  .md-typeset .viz-bars__row { grid-template-columns: 6.5rem 1fr 2.4rem; font-size: .65rem; }
+  .md-typeset .viz-maps { height: 14rem; }
+  .md-typeset .viz-bundle__defs { min-height: 11rem; }
+  .md-typeset .viz-bundle__map li { font-size: .6rem; gap: .4rem; }
   .md-typeset .viz-models__steps { flex-direction: column; gap: .8rem; }
   .md-typeset .viz-models__steps li + li::before { content: "↓"; left: 50%; top: -.9rem; transform: translateX(-50%); }
-  .md-typeset .viz-bundle__defs p { font-size: .75rem; }
+  .md-typeset .viz-bundle__def { font-size: .75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .md-typeset .viz *, .md-typeset .viz *::before { transition: none !important; }
+  .md-typeset .viz *, .md-typeset .viz *::before,
+  .md-typeset .viz-maps * { transition: none !important; }
 }
 
 /* Footer */
