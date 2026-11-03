@@ -640,11 +640,9 @@ svg { display: block; }
 .md-typeset .grid.cards > ul > li > :last-child { margin-bottom: 0; }
 .md-typeset .grid.cards p { margin: .5em 0; }
 .md-typeset .card-tag {
-  font-family: var(--md-code-font);
-  font-size: .64rem;
-  letter-spacing: .02em;
+  font-size: .7rem;
+  font-style: italic;
   color: var(--md-default-fg-color--light);
-  text-transform: uppercase;
 }
 .md-typeset .card-meta {
   font-size: .7rem;
