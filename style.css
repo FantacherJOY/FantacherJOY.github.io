@@ -652,6 +652,16 @@ svg { display: block; }
 /* Project entries: one per row */
 
 .md-typeset .grid.projects { grid-template-columns: 1fr; grid-gap: .8rem; }
+.md-typeset .card-links { font-size: .7rem; }
+.md-typeset .card-embed {
+  display: block;
+  width: 100%;
+  height: 18rem;
+  margin: .8em 0;
+  border: .05rem solid var(--md-default-fg-color--lightest);
+  border-radius: .1rem;
+  background-color: #ffffff;
+}
 
 /* Footer */
 
