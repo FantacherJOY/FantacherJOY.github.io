@@ -38,6 +38,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  // Project graphics: step through bundle components and animate once in view
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.viz-bundle').forEach(viz => {
+    const steps = viz.querySelectorAll('.viz-bundle__steps li');
+    const defs  = viz.querySelectorAll('.viz-bundle__defs p');
+    let i = 0;
+    const show = n => {
+      steps.forEach((s, k) => s.classList.toggle('is-active', k === n));
+      defs.forEach((d, k) => d.classList.toggle('is-active', k === n));
+    };
+    steps.forEach((s, k) => s.addEventListener('mouseenter', () => { i = k; show(i); }));
+    if (!reduceMotion) setInterval(() => { i = (i + 1) % steps.length; show(i); }, 2500);
+  });
+
+  const animated = document.querySelectorAll('.viz-bars, .viz-models');
+  if (animated.length && 'IntersectionObserver' in window && !reduceMotion) {
+    root.classList.add('js-viz');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    animated.forEach(el => io.observe(el));
+  }
+
   window.addEventListener('scroll', () => { onScroll(); onSpy(); }, { passive: true });
   onScroll();
   onSpy();
