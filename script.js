@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!reduceMotion) setInterval(() => { i = (i + 1) % nav.length; show(i); }, delay);
   };
   document.querySelectorAll('.viz-bundle').forEach(viz => cycle(viz, '.viz-bundle__steps li', '.viz-bundle__card', 4000));
-  document.querySelectorAll('.viz-maps').forEach(viz => cycle(viz, '.viz-maps__dots li', 'img', 3500));
+  document.querySelectorAll('.viz-maps').forEach(viz => cycle(viz, '.viz-maps__names li', 'img', 3500));
 
   const animated = document.querySelectorAll('.viz-models');
   if (animated.length && 'IntersectionObserver' in window && !reduceMotion) {
